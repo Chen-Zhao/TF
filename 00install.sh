@@ -25,6 +25,8 @@ c.NotebookApp.keyfile = u'/Users/bgranger/.jupyter/mycert.key'
 
 firewall-cmd --zone=public --add-port=8888/tcp
 
+pip install --upgrade tensorflow
+
 mkdir /home/chenzhao/Notebook/TF
 cd /home/chenzhao/Notebook/TF
 jupyter notebook --ip=* --no-browser
