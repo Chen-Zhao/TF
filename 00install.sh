@@ -25,6 +25,8 @@ c.NotebookApp.keyfile = u'/Users/bgranger/.jupyter/mycert.key'
 
 firewall-cmd --zone=public --add-port=8888/tcp
 
+mkdir /home/chenzhao/Notebook/TF
+cd /home/chenzhao/Notebook/TF
 jupyter notebook --ip=* --no-browser
 
 http://testnb.readthedocs.io/en/stable/examples/Notebook/Configuring%20the%20Notebook%20and%20Server.html
