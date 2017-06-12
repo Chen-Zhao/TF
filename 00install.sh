@@ -13,3 +13,19 @@ export MANPATH
 export INFOPATH
 export PKG_CONFIG_PATH
 
+source /home/softwares/bin/enable.python3.anaconda3.sh
+
+jupyter-notebook --generate-config
+cd ~/.jupyter
+openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
+vi jupyter_notebook_config.py
+# The full path to a private
+c.NotebookApp.certfile = u'/Users/bgranger/.jupyter/mycert.crt'
+c.NotebookApp.keyfile = u'/Users/bgranger/.jupyter/mycert.key'
+
+firewall-cmd --zone=public --add-port=8888/tcp
+
+jupyter notebook --ip=* --no-browser
+
+http://testnb.readthedocs.io/en/stable/examples/Notebook/Configuring%20the%20Notebook%20and%20Server.html
+
